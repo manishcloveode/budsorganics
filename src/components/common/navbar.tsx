@@ -1,5 +1,6 @@
 "use client";
 import { Search, Heart, ShoppingBag } from 'lucide-react';
+import Link from 'next/link';
 
 const Navbar = () => {
     return (
@@ -7,22 +8,22 @@ const Navbar = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <a href="#" className="flex items-center space-x-2">
+                    <Link href="/" className="flex items-center space-x-2">
                         <img
                             src="/new_buds_logo.webp"
                             alt="Buds Organics Logo"
                             className="h-12 w-auto"
                         />
-                    </a>
+                    </Link>
 
-                    {/* Menu (static, one line) */}
+
                     <div className="hidden md:flex space-x-8 text-lg font-baloo-bold">
-                        <a href="#" className="text-black hover:text-orange-600 transition">Buds Organics</a>
-                        <a href="#" className="text-black hover:text-orange-600 transition">Baby Care</a>
-                        <a href="#" className="text-black hover:text-orange-600 transition">Mother Care</a>
-                        <a href="#" className="text-black hover:text-orange-600 transition">Household</a>
-                        <a href="#" className="text-black hover:text-orange-600 transition">News & Resources</a>
-                        <a href="#" className="text-black hover:text-orange-600 transition">Reward Store</a>
+                        <Link href="#" className="text-black hover:text-orange-600 transition">Buds Organics</Link>
+                        <Link href="my/buds-baby-shop" className="text-black hover:text-orange-600 transition">Baby Care</Link>
+                        <Link href="#" className="text-black hover:text-orange-600 transition">Mother Care</Link>
+                        <Link href="#" className="text-black hover:text-orange-600 transition">Household</Link>
+                        <Link href="#" className="text-black hover:text-orange-600 transition">News & Resources</Link>
+                        <Link href="#" className="text-black hover:text-orange-600 transition">Reward Store</Link>
                     </div>
 
                     {/* Right Icons */}
