@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Baloo_2 } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/common/navbar";
+import Footer from "@/components/common/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +12,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Baloo 2 font configuration with multiple weights
+const baloo2 = Baloo_2({
+  variable: "--font-baloo-2",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"], // Regular, Medium, SemiBold, Bold, ExtraBold
 });
 
 export const metadata: Metadata = {
@@ -25,9 +34,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${baloo2.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
