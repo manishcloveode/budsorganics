@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 
-const BabyProductCard = ({ name, price, image }: { name: string; price: number; image: string }) => {
+const ProductCard = ({ name, price, image }: { name: string; price: number; image: string }) => {
     return (
         <div className="bg-white rounded-xl shadow-md p-4 text-center w-full max-w-xs mx-auto">
             <div className="bg-white rounded-lg p-4">
@@ -23,4 +23,4 @@ const BabyProductCard = ({ name, price, image }: { name: string; price: number; 
     );
 };
 
-export default BabyProductCard;
+export default ProductCard;

@@ -1,5 +1,5 @@
 "use client";
-import { babyProductsData } from "@/data/babyProductsData";
+import { householdProductsData } from "@/data/householdProducts";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Star } from "lucide-react";
@@ -30,7 +30,7 @@ const SingleProductPage = ({ params }: Props) => {
 
     if (!slug) return <div>Loading...</div>;
 
-    const product = babyProductsData.find((item) => item.slug === slug);
+    const product = householdProductsData.find((item) => item.slug === slug);
 
     if (!product) return notFound();
 

@@ -1,5 +1,5 @@
 "use client";
-import { babyProductsData } from "@/data/babyProductsData";
+import { rewardsData } from "@/data/rewardsData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Star } from "lucide-react";
@@ -18,19 +18,16 @@ const SingleProductPage = ({ params }: Props) => {
     const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
-        const resolveParams = async () => {
+        const getParams = async () => {
             const resolvedParams = await params;
-            if (resolvedParams?.slug) {
-                setSlug(resolvedParams.slug);
-            }
+            if (resolvedParams?.slug) setSlug(resolvedParams.slug);
         };
-
-        resolveParams();
+        getParams();
     }, [params]);
 
     if (!slug) return <div>Loading...</div>;
 
-    const product = babyProductsData.find((item) => item.slug === slug);
+    const product = rewardsData.find((item) => item.slug === slug);
 
     if (!product) return notFound();
 
@@ -86,7 +83,7 @@ const SingleProductPage = ({ params }: Props) => {
                         </div>
 
                         <p className="text-orange-600 text-2xl font-baloo-bold mb-4">
-                            RM {product.price}
+                            Points {product.price}
                         </p>
                         <p className="text-gray-600 font-baloo mb-6">{product.description}</p>
 
@@ -117,7 +114,6 @@ const SingleProductPage = ({ params }: Props) => {
                         <ul className="text-sm text-gray-600 space-y-1 mb-6 font-baloo">
                             <li><strong>SKU:</strong> {product.sku}</li>
                             <li><strong>Brand:</strong> {product.brand}</li>
-                            <li><strong>Category:</strong> {product.category}</li>
                             <li>
                                 <strong>Tags:</strong> {product.tags.join(", ")}
                             </li>
@@ -130,7 +126,7 @@ const SingleProductPage = ({ params }: Props) => {
             <div className="bg-white py-12">
                 <div className="container mx-auto px-4 font-baloo">
                     <div className="flex gap-6 border-b pb-2 mb-6">
-                        {["Ingredients", "How to Use", "Q&A", "Reviews"].map((tab, idx) => (
+                        {["Terms & Conditions", "Reviews"].map((tab, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setActiveTab(tab)}
@@ -144,38 +140,15 @@ const SingleProductPage = ({ params }: Props) => {
                         ))}
                     </div>
 
-                    {activeTab === "Ingredients" && (
+                    {activeTab === "Terms & Conditions" && (
                         <div className="text-gray-700 space-y-2">
-                            <p>{product.ingredients}</p>
-                        </div>
-                    )}
-
-                    {activeTab === "How to Use" && (
-                        <div className="text-gray-700 space-y-2">
-                            <p>{product.howToUse}</p>
-                        </div>
-                    )}
-
-                    {activeTab === "Q&A" && (
-                        <div className="text-gray-700 space-y-6">
-                            {product.qna?.map((qa, index) => (
-                                <div key={index}>
-                                    <h3 className="font-bold text-gray-800">{qa.question}</h3>
-                                    <p className="text-gray-600">{qa.answer}</p>
-                                </div>
-                            ))}
+                            <p>{product.terms}</p>
                         </div>
                     )}
 
                     {activeTab === "Reviews" && (
                         <div className="text-gray-700 space-y-2">
-                            {product.reviews?.length === 0 ? (
-                                <p>No reviews yet.</p>
-                            ) : (
-                                product.reviews.map((review, i) => (
-                                    <div key={i}>{review}</div>
-                                ))
-                            )}
+                            <p>{product.Reviews}</p>
                         </div>
                     )}
                 </div>

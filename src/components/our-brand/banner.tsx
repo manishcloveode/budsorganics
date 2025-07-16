@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const BudsBanner = () => {
     return (
-        <section className="grid grid-cols-1 md:grid-cols-2 bg-[#F8B83D]">
+        <section className="grid grid-cols-1 md:grid-cols-2 bg-orange-600">
             {/* LEFT: Image */}
             <div className="w-full h-full relative aspect-[2/1] md:aspect-auto">
                 <Image
-                    src="/Buds_banner.webp" // replace with actual path in public folder
+                    src="/Buds_banner.webp"
                     alt="Buds Everyday Organics"
                     fill
                     className="object-cover"
@@ -16,7 +16,7 @@ const BudsBanner = () => {
             </div>
 
             {/* RIGHT: Content */}
-            <div className="flex flex-col justify-center p-8 md:p-16 font-baloo text-gray-900">
+            <div className="flex flex-col justify-center p-8 md:p-16 font-baloo text-white">
                 <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
                     Buds <br />
                     Everyday <br />
