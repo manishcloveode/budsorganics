@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 const testimonials = [
     {
@@ -96,9 +96,9 @@ export default function TestimonialSection() {
                             >
                                 <div className="bg-white rounded-2xl p-8 shadow-lg border relative h-full">
                                     <div className=" left-8">
-                                        <div className="bg-orange-600 rounded-full p-3">
+                                        {/* <div className="bg-orange-600 rounded-full p-3">
                                             <Quote className="w-6 h-6 text-white" />
-                                        </div>
+                                        </div> */}
                                     </div>
                                     <div className="mt-4">
                                         <StarRating rating={testimonial.rating} />

@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-
+import Link from 'next/link';
 const ProductShowcase = () => {
     const products = [
         {
@@ -55,11 +55,11 @@ const ProductShowcase = () => {
     ];
 
     return (
-        <div className="bg-white p-6">
+        <div className="bg-white py-20">
             <div className="container mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-6xl font-bold text-black font-baloo-bold mb-4">
+                    <h1 className="text-4xl font-bold text-black font-baloo-bold mb-4">
                         Shop By Range
                     </h1>
                 </div>
@@ -67,9 +67,10 @@ const ProductShowcase = () => {
                 {/* Products Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {products.map((product) => (
-                        <div
+                        <Link
                             key={product.id}
-                            className="group relative bg-white rounded-3xl shadow-xl  transition-all duration-500 overflow-hidden"
+                            href="/our-brands"
+                            className="group relative bg-white rounded-3xl shadow-xl transition-all duration-500 overflow-hidden"
                         >
                             {/* Product Image */}
                             <div className="w-full h-52 relative">
@@ -91,9 +92,7 @@ const ProductShowcase = () => {
                                     {product.description}
                                 </p>
                             </div>
-
-
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

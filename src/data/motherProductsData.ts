@@ -1,6 +1,6 @@
 // src/data/motherProductsData.ts
 
-export const babyProductsData = [
+export const motherProductsData = [
     {
         id: 1,
         name: "Calming Rub Cream",
@@ -8,10 +8,10 @@ export const babyProductsData = [
         price: 52.3,
         stock: 597,
         rating: 0,
-        image: "/babyproducts/BHE_Hand_Sanitiser_60ml_1_cf2e5c640a.webp",
+        image: "/motherproducts/BSO_Calming_Rub_Cream_30ml_1_78aa9e0f92.webp",
         images: [
-            "/babyproducts/BHE_Hand_Sanitiser_60ml_1_cf2e5c640a.webp",
-            "/babyproducts/BHE_Hand_Sanitiser_60ml_2_fe7aec5f66.webp",
+            "/motherproducts/BSO_Calming_Rub_Cream_30ml_2_2eb0decaf9.webp",
+            "/motherproducts/BSO_Calming_Rub_Cream_30ml_3_f8707f5453.webp",
         ],
         sku: "9555099100496",
         brand: "Buds Soothing Organics",

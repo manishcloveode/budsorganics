@@ -132,11 +132,11 @@ export default function OurBrandsPage() {
                                 className="object-contain mb-4"
                             />
                             <h3 className="text-base font-semibold text-gray-800 mb-3">{brand.name}</h3>
-                            {/* <Link href={brand.link}>
-                                <button className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 text-sm">
+                            <Link href={brand.link}>
+                                <button className="bg-orange-600 text-white font-baloo px-4 py-2 rounded hover:bg-orange-700 text-sm">
                                     Shop Now
                                 </button>
-                            </Link> */}
+                            </Link>
                         </li>
                     ))}
                 </ul>
